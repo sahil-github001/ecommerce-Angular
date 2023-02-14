@@ -1,0 +1,56 @@
+    <!-- Empty Cart -->
+    <div class="container-fluid bg-light mt-5" *ngIf="cartitem.length == 0">
+        <div class="row">
+            <div class="col text-center">
+                <img style="width: 40vw;"
+                    src="https://cdn.dribbble.com/users/5107895/screenshots/14532312/media/a7e6c2e9333d0989e3a54c95dd8321d7.gif"
+                    alt="">
+                <div>
+                    <h3>Your Cart is Empty</h3>
+                    <button class="btn btn-primary">Shop now</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+<!-- table for Cart -->
+
+<div class="container" *ngIf="cartitem.length != 0">
+    <div class="row">
+        <div class="col">
+            <table class="mt-5">
+                <thead>
+                    <tr>
+                        <th>Number</th>
+                        <th>Name</th>
+                        <th>Image</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of cartitem, let i = index">
+                        <td>{{i+1}}</td>
+                        <td>{{product.title}} </td>
+                        <td><img [src]="product.image">
+                        </td>
+                        <td>{{product.description}}</td>
+                        <td>{{product.price}}</td>
+                        <td><i (click)="removecart(product)" class="fa-sharp fa-solid fa-trash text-danger"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="mt-3 mb-5 text-end">
+                <button (click)="removeall()" class="btn btn-danger m-2">Empty Cart</button>
+                <button routerLink="" class="btn btn-primary m-2">Shop more</button>
+                <button class="btn btn-success m-2" data-toggle="modal" data-target="#exampleModal">Check Out</button>
+                <b>Grand Total:{{grand}}</b>
+            </div>
+        </div>
+    </div>
+</div>

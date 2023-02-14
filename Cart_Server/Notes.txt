@@ -1,0 +1,30 @@
+Server Creation of E-Commerce
+
+1. Create package.json = npm init
+2. Create node modules, Install express = npm i express
+3. Create index.js (Main entry point)
+4. import express into index.js = const express = require('express');
+5. Create an application using express = const app = express();
+6. Use json parser for server responses = app.use(express.json())
+7. Setup a port number = app.listen(3000, () => { console.log('listening to port : 3000')} );
+8. Intreagation (connect backend and frontent) 
+    Install cors = npm i cors 
+    import cors = const cors = require('cor')
+    Using cors specify the origin to the server = app.use(cors({
+                                                    origin:'http://localhost:4200'
+                                                   }));
+9. Services = create a folder service, create files = dataService.js, db.js
+10. backend and mongodb connection
+        install mongoose = npm i mongoose
+        import mongoose = const mongoose = require('mongoose');
+        Define the connection string =
+            mongoose.connect('mongodb://localhost:27017/cart', () => {
+                console.log('connected to mongodb');
+            })   
+        create model for products and export
+11. Resolving API calls in index.js  
+        import dataService
+12. Create logic in dataServices
+        import db in dataServices
+        define function
+13. Final step define api call in index.js                                                             
