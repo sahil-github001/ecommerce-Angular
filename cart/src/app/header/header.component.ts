@@ -7,19 +7,23 @@ import { CartService } from '../products/cart.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit{
-  cartcount:number = 0;
-  constructor(private api:ApiService, private cart:CartService){}
+export class HeaderComponent implements OnInit {
+
+  cartcount: number = 0;
+
+  constructor(private api: ApiService, private cart: CartService) { }
+
   ngOnInit(): void {
     this.cart.cartlist.subscribe(
-      (data:any) => {
+      (data: any) => {
         this.cartcount = data.length
       }
     )
   }
 
-  search(event:any){
+  search(event: any) {
     let searchKey = event.target.value;
     this.api.searchkey.next(searchKey);
   }
+  
 }

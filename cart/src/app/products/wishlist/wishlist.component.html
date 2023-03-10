@@ -1,46 +1,36 @@
 <!-- Empty wishlist -->
-<div class="container-fluid mb-3" *ngIf="errorMsg">
+<div class="container mt-5 pb-5 mb-5" *ngIf="errorMsg">
     <div class="row">
-        <div class="col text-center">
-            <img style="width: 40vw;" src="https://cdn.dribbble.com/users/392618/screenshots/2121061/wishlist.gif" alt="">
-            <div>
-                <h3>Your Wishlist is Empty</h3>
-                <button class="btn btn-primary">Shop now</button>
-            </div>
-
+        <div class="col-12 text-center noWish">
+            <img src="../../../assets/images/wishlist.jpeg" width="200" alt="">
+            <h1 class="pb-3 pt-3">Your WishList is empty</h1>
+            <h4 class="pb-2">Browse Product and add them to your <br>wishlist to see them here</h4>
+            <button type="button" routerLink="" class="bg-success text-white rounded py-2 px-3">CONTINUE
+                SHOPPING</button>
         </div>
-       
     </div>
 </div>
 
 
 
-<section class="py-5">
-    <div class="container-fluid px-4 px-lg-5 mt-5">
-        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            <div class="col mb-5" *ngFor="let product of wishList ">
-                <div class="card h-100" >
-                    <!-- Product image-->
-                    <img class="card-img-top mx-auto" [src]="product.image" alt="..." />
-                    <!-- Product details-->
-                    <div class="card-body p-4">
-                        <div class="text-center">
-                            <!-- Product name-->
-                            <h5 class="fw-bolder">{{product.title}}</h5>
-                            <!-- Product price-->
-                            ${{product.price}}
-                        </div>
-                    </div>
-                    <!-- Product actions-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center">
-                            <button class="btn btn-outline-danger mt-auto mx-3" ><i class="fa fa-trash" (click)="deleteWish(product)"></i></button>
-                            <button  class="btn btn-outline-success mt-auto mx-3" (click)="addtocart(product)"><i class="fa fa-cart-plus"></i></button>
-                        </div>
-                    </div>
-                </div>
+<div class="container px-lg-5 py-5">
+    <div class="row mx-2 mx-lg-5 my-4 border my-lg-2 " *ngFor="let product of wishList">
+        <div class="col-6 col-lg-3  text-center p-3">
+            <img src={{product.image}} alt="" style="height:160px; width:130px">
+        </div>
+        <div class="col-6 col-lg-3  bg-light py-2">
+            <p>{{product.title}}</p>
+            <h5 class="fw-bold">${{product.price}}</h5>
+            <div class="text-center mt-5">
+                <button (click)="deleteWish(product)" class="btn btn-outline-danger  mx-3"><i
+                        class="fa fa-trash "></i></button>
+                <button (click)="addtocart(product)" class="btn btn-outline-success  mx-3"><i
+                        class="fa fa-cart-plus"></i></button>
             </div>
-            
+        </div>
+        <div class="col-lg-6  p-3 ">
+            <h6 class="text-center fw-bold"><u style="color:rgba(0, 0, 0, .7)">Description</u></h6>
+            <p>{{product.description}}</p>
         </div>
     </div>
-</section>
+</div>

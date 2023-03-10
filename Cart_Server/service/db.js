@@ -7,29 +7,29 @@ mongoose.connect('mongodb://localhost:27017/cart', () => {
 });
 
 // Create a model for the products
-const Product = mongoose.model('Product', {
+const Product = mongoose.model('products', {
     // Schema creation
-    id:Number,
-    title:String,
-    price:Number,
-    description:String,
-    category:String,
-    image:String,
-    rating:{
-        rate:Number,
-        count:Number
+    id: Number,
+    title: String,
+    price: Number,
+    description: String,
+    category: String,
+    image: String,
+    rating: {
+        rate: Number,
+        count: Number
     }
 });
 
 const Wishlist = mongoose.model('wishlist', {
-    id:Number,
-  title:String,
-  price:Number,
-  image:String,
-  description:String
+    id: Number,
+    title: String,
+    price: Number,
+    image: String,
+    description: String
 })
 
 module.exports = {
     Product,
     Wishlist
-}
+} 

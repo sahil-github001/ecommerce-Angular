@@ -15,7 +15,7 @@ app.use(express.json());
 
 // Using cors specify the origin to the server
 app.use(cors({
-    origin:'http://localhost:4200'
+    origin: 'http://localhost:4200'
 }));
 
 // setup a port number
@@ -41,16 +41,14 @@ app.post('/addToWishlist', (req, res) => {
     )
 })
 
-
 // API call to get wishlist
 app.get('/getWishlist', (req, res) => {
-   dataServices.getWishlist().then(
-    (result) => {
-        res.status(result.statusCode).json(result)
-    }
-   )
+    dataServices.getWishlist().then(
+        (result) => {
+            res.status(result.statusCode).json(result)
+        }
+    )
 })
-
 
 // call to delete wishlist
 app.delete('/deleteWishlist/:id', (req, res) => {
@@ -60,7 +58,4 @@ app.delete('/deleteWishlist/:id', (req, res) => {
         }
     )
 })
-
-
-
 

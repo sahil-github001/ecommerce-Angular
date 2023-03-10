@@ -1,24 +1,17 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-primary">
-    <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" routerLink="/">
-            <h1 class="text-light bg-primary" style="font-family: 'PT Serif', serif"><i
-                    class="fa-sharp fa-solid fa-cart-shopping"></i> E-Commerce</h1>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
-                class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                <input (keyup)="search($event)" placeholder="Search your products" class="form-control">
-                <li class="nav-item"><a class="nav-link active text-white" aria-current="page" routerLink="products/wishlist">Wishlist</a></li>
-            </ul>
-            <form class="d-flex">
-                <button class="btn btn-outline-light" type="button" routerLink="products/cart">
-                    <i class="bi-cart-fill me-1"></i>
-                    Cart
-                    <span class="badge bg-light text-dark ms-1 rounded-pill">{{cartcount}}</span>
-                </button>
-            </form>
+<div class="container-fluid border py-1 py-lg-3 bg-white ">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 ps-lg-5 text-center text-lg-start">
+                <a routerLink="/" class=""><i class="fa-sharp fa-solid fa-cart-shopping"></i>ShoPLifT</a>
+            </div>
+            <div class="col-lg-4 text-center pt-1 pt-lg-0">
+                <input class="rounded" (keyup)="search($event)" placeholder="Search your products">
+            </div>
+            <div
+                class="col-lg-4 text-center d-flex align-items-center justify-content-center py-2 py-lg-0 justify-content-lg-end ">
+                <button type="button" class="mx-2" routerLink="products/wishlist">Wishlist</button>
+                <button type="button" class="mx-2" routerLink="products/cart">Cart-<span>{{cartcount}}</span></button>
+            </div>
         </div>
     </div>
-</nav>
+</div>

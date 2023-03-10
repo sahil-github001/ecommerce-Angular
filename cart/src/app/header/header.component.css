@@ -1,0 +1,41 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
+
+.container-fluid {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #333333;
+    font-style: italic;
+    font-family: 'Tilt Warp', cursive;
+    font-size: 30px;
+}
+
+input {
+    background-color: #eef3f8;
+    color: rgba(0, 0, 0, .9);
+    border: solid 1px #d9c8c8;
+    border-radius: 3px;
+    padding: 7px;
+    width: 80%;
+    outline: none;
+}
+
+button {
+    background-color: #fff;
+    color: rgb(82, 81, 81);
+    border: 1px solid rgb(82, 81, 81);
+    padding: 4px 8px;
+    border-radius: 5px;
+    transition: .3s;
+}
+
+button:hover {
+    background-color: #333333;
+    color: white;
+}

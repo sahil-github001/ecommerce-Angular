@@ -5,14 +5,14 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(allProducts:[], searchKey:string, propName:string): any {
-    if(!allProducts || searchKey == '' || propName == ''){
+  transform(allProducts: [], searchKey: string, propName: string): any {
+    if (!allProducts || searchKey == '' || propName == '') {
       return allProducts;
     }
-    
-    const result:any  = [];
-    allProducts.forEach((product:any) => {
-      if(product[propName].trim().toLowerCase().includes(searchKey.toLowerCase())){
+
+    const result: any = [];
+    allProducts.forEach((product: any) => {
+      if (product[propName].trim().toLowerCase().includes(searchKey.toLowerCase())) {
         result.push(product);
       }
     })

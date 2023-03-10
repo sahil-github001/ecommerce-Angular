@@ -8,45 +8,42 @@ import { CartService } from '../cart.service';
   templateUrl: './wishlist.component.html',
   styleUrls: ['./wishlist.component.css']
 })
-export class WishlistComponent implements OnInit{
+export class WishlistComponent implements OnInit {
 
-  wishList:any = [];
-  errorMsg:any;
-  constructor(private api :ApiService, private router: Router, private cart:CartService){}
+  wishList: any = [];
+  errorMsg: any;
+
+  constructor(private api: ApiService, private router: Router, private cart: CartService) { }
 
   ngOnInit(): void {
     this.api.getWishlist().subscribe(
-      (data:any) => {
+      (data: any) => {
         this.wishList = data.products;
-        if(this.wishList.length == 0){
-          this.errorMsg = 'Empty wishlist'; 
+        if (this.wishList.length == 0) {
+          this.errorMsg = 'Empty wishlist';
         }
       },
-      (data:any) => {
+      (data: any) => {
         this.errorMsg = data.error.message;
       }
     )
   }
-  
-  deleteWish(product:any){
+
+  deleteWish(product: any) {
     this.api.deleteWish(product.id).subscribe(
-      (result:any) => {
+      (result: any) => {
         alert(result.message);
         this.ngOnInit() // Automatic refresh
-
         this.wishList = result.wishList
-        // if(this.wishList.length == 0){
-        //   this.e
-        // }
       },
-      (result:any) => {
+      (result: any) => {
         alert(result.error.message);
       }
     )
   }
 
-  addtocart(product:any){
+  addtocart(product: any) {
     this.cart.addtocart(product)
-    this.deleteWish(product);
   }
+  
 }

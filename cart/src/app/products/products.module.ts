@@ -8,7 +8,7 @@ import { CartComponent } from './cart/cart.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FilterPipe } from './pipes/filter.pipe';
-import { CartNewComponent } from './cart-new/cart-new.component'
+
 
 @NgModule({
   declarations: [
@@ -16,8 +16,7 @@ import { CartNewComponent } from './cart-new/cart-new.component'
     AllProductsComponent,
     CartComponent,
     WishlistComponent,
-    FilterPipe,
-    CartNewComponent,
+    FilterPipe
   ],
   imports: [
     CommonModule,
