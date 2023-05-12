@@ -1,0 +1,32 @@
+Frontent Designing
+    1.Add bootstrap, fontawesome, googlefonts
+    2.Lazy loading 
+        its a process of loading components and modules
+        it improves application load time and performance
+        add router outlet to app.components.html
+        ng g m products --route products --module app.module
+        ng g c products/all-products
+
+        set path 
+        product-routing module
+        
+pagenot found - ng g c page-not-found   = app.route.module
+     { path: '**', component:PageNotFoundComponent}
+
+     creating header and footer 
+        ng g c header
+        ng g c footer
+
+Designing of Frontent
+
+Intregration
+    creating services  API Calling = ng g s products/api
+    import HttpClientModule in product module
+    Dependency injection HttpClientModule class in API services
+
+Page Designing
+Search for a product 
+        ng g p products/pipes/filter
+
+
+        

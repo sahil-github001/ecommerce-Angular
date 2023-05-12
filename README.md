@@ -28,5 +28,3 @@ ShopLift is an ecommerce webpage built with Angular, Bootstrap, Node.js, Express
 5. Open the `db.json` file located in the backend directory of the project.
 6. Insert the contents of the `db.json` file into the `products` collection in MongoDB.
 8. To start server run `node index.js`.
-
-
